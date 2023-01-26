@@ -8,7 +8,7 @@ public class Ennemi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        count.EnnemyCount = 1;
+        //count.EnnemyCount = 1;
     }
 
     // Update is called once per frame
