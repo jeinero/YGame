@@ -14,5 +14,5 @@ public class Score : MonoBehaviour
     {
         int Gly = score;
         scoreText.text = $"Level: {score + Gly}";
-    }
+    }   
 }
