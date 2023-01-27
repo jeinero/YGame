@@ -1,18 +1,17 @@
 using TMPro;
 using UnityEngine;
 
-public class Score : MonoBehaviour
+public class Score
 {
-    private TextMeshProUGUI scoreText;
-
-    private void Awake()
-    {
-        scoreText = GetComponent<TextMeshProUGUI>();
-    }
+    private int score;
 
     public void UpdateScore(int score)
     {
-        int Gly = score;
-        scoreText.text = $"Level: {score + Gly}";
-    }   
+        this.score += score;
+    }
+
+    public int Scores
+    {
+        get => score;
+    }
 }
