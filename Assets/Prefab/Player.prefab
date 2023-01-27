@@ -85,7 +85,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2204261922216339023}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -317,6 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1cee5261f688a240944f8b8cbabfc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manage: {fileID: 0}
   showLevel: {fileID: 2204261922915319143}
 --- !u!70 &2378064415767113228
 CapsuleCollider2D:
@@ -642,7 +643,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2204261923657666619}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
