@@ -10,8 +10,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.level = 0;
-        showLevel.text = $"LVL: {this.level}";
+        //this.level = 0;
+        //showLevel.text = $"LVL: {this.level}";
     }
 
     // Update is called once per frame

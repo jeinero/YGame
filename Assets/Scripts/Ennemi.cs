@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Ennemi : MonoBehaviour
 {
+    public GameManager count;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //count.EnnemyCount = 1;
     }
 
     // Update is called once per frame
