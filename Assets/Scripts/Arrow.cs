@@ -19,7 +19,11 @@ public class Arrow : MonoBehaviour
     void Update()
     {
         getClosestEnnemi();
-        rotateDirection();
+        if (Target != null)
+        {
+            rotateDirection();
+
+        }
     }
 
     private void getClosestEnnemi()
