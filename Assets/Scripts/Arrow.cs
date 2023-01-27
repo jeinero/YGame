@@ -40,18 +40,15 @@ public class Arrow : MonoBehaviour
     }
     private void rotateDirection()
     {
-        //float Y =  (Target.transform.position.y) - Player.transform.position.y;
-        //float X =  (Target.transform.position.x) - Player.transform.position.x; 
-        //float angle = (Mathf.Asin(Y/(Y + X)) * Mathf.Rad2Deg);
-        //this.transform.eulerAngles = new(0, 0, angle);
-        //Vector3 dir = Target.transform.position - Player.transform.position;
-        //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        //transform.eulerAngles = new(0f, 0f, angle);
-        //transform.rotation = Quaternion.LookRotation(Vector3.up, dir);
-        //Vector3 pos = Target.transform.position;
-        //pos.z = transform.position.z;
-        //transform.LookAt(pos, Vector3.up);
-        //transform.rotation = Quaternion.Slerp(rb.transform.rotation,
-        //   Quaternion.Euler(0, 0, angle), 0.7f);
+        float XRepereJoueur = ((Target.transform.position.y - Player.transform.position.y));
+        float YRepereJoueur = -1 * ((Target.transform.position.x - Player.transform.position.x));
+        float angle = Mathf.Asin(YRepereJoueur / Mathf.Sqrt(Mathf.Pow(YRepereJoueur, 2) + Mathf.Pow(XRepereJoueur, 2)));
+        angle = angle * Mathf.Rad2Deg;
+        if (Target.transform.position.y < Player.transform.position.y)
+        {
+            angle -= 180;
+            angle *= -1;
+        }
+        this.transform.eulerAngles = new(0, 0, angle);
     }
 }
