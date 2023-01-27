@@ -8,11 +8,8 @@ public class Arrow : MonoBehaviour
 {
     public GameObject Player;
     private GameObject Target;
-    public Transform target2;
     private GameObject[] Ennemi;
     private float oldDistance = 9999;
-    private Quaternion startRotation;
-    private Quaternion endRotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +25,10 @@ public class Arrow : MonoBehaviour
     private void getClosestEnnemi()
     {
         Ennemi = GameObject.FindGameObjectsWithTag("Ennemi");
+        if (Ennemi.Length == 0)
+        {
+            return;
+        }
         foreach (GameObject obj in Ennemi)
         {
             float dist = Vector3.Distance(Player.gameObject.transform.position, obj.transform.position);

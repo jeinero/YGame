@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,8 +11,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //this.level = 0;
-        //showLevel.text = $"LVL: {this.level}";
+        this.level = 1;
+        showLevel.text = $"LVL: {this.level}";
     }
 
     // Update is called once per frame
@@ -29,4 +30,21 @@ public class Player : MonoBehaviour
         transform.position += 0.25f * direction;
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("triggered");
+        if(this.level >= collision.gameObject.GetComponent<Ennemi>().lvl)
+        {
+            this.level += collision.gameObject.GetComponent<Ennemi>().lvl;
+            showLevel.text = $"LVL: {this.level}";
+            Destroy(collision.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene("Defeat");
+        }
+        //
+    }
+
 }

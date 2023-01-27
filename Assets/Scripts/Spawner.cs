@@ -7,8 +7,8 @@ public class Spawner : MonoBehaviour
     float y;
     float z;
     Vector3 pos;
-    public GameObject[] objects;
-
+    public GameObject objects;
+    private int lvl = 1;
     public void SpawnRandom()
     {
 
@@ -18,7 +18,10 @@ public class Spawner : MonoBehaviour
         pos = new Vector3(x, y, z);
         transform.position = pos;
 
-        Instantiate(objects[UnityEngine.Random.Range(0, objects.Length - 1)], pos, Quaternion.identity);
+        Instantiate(objects, pos, Quaternion.identity);
+        int lvlgive = Random.Range(1, lvl);
+        objects.GetComponent<Ennemi>().SetLvl(lvlgive);
+        lvl += lvlgive;
     }
     void Start()
     {
