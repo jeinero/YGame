@@ -7,6 +7,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private float level;
+    public GameManager manage;
     public TextMeshProUGUI showLevel;
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
             this.level += collision.gameObject.GetComponent<Ennemi>().lvl;
             showLevel.text = $"LVL: {this.level}";
             Destroy(collision.gameObject);
+            manage.EnnemyCount -= 1;
         }
         else
         {

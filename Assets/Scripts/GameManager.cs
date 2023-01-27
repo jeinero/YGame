@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
         {
             _ennemysCount = value;
             CheckEnnemysCountLeft();
-            SetInt(Getint()+2);
         }
     }
 
@@ -30,6 +29,7 @@ public class GameManager : MonoBehaviour
         if (_ennemysCount <= 0)
         {
             SceneManager.LoadScene("LVL1");
+            SetInt(Getint() + 2);
         }
     }
 

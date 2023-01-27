@@ -5,13 +5,13 @@ using TMPro;
 
 public class Ennemi : MonoBehaviour
 {
-    public GameManager count;
     public TextMeshProUGUI showLevel;
     public int lvl;
     // Start is called before the first frame update
     void Start()
     {
     }
+   
 
     public void SetLvl(int lvl)
     {
