@@ -29,7 +29,7 @@ public class Arrow : MonoBehaviour
     {
         oldDistance = 9999;
     Ennemi = GameObject.FindGameObjectsWithTag("Ennemi");
-        print(Ennemi.Length);
+//        print(Ennemi.Length);
         if (Ennemi.Length == 0)
         {
             return;
