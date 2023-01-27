@@ -22,17 +22,18 @@ public class Arrow : MonoBehaviour
         if (Target != null)
         {
             rotateDirection();
-
         }
     }
 
     private void getClosestEnnemi()
     {
-        Ennemi = GameObject.FindGameObjectsWithTag("Ennemi");
+        oldDistance = 9999;
+    Ennemi = GameObject.FindGameObjectsWithTag("Ennemi");
+        print(Ennemi.Length);
         if (Ennemi.Length == 0)
         {
             return;
-        }
+        } 
         foreach (GameObject obj in Ennemi)
         {
             float dist = Vector3.Distance(Player.gameObject.transform.position, obj.transform.position);
