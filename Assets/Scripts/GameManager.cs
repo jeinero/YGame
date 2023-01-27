@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
-    private Score scoreComponent;
     private int _ennemysCount = 0;
+    private Score score;
+    private string scoresss = "score";
 
     public int EnnemyCount
     {
@@ -19,13 +21,8 @@ public class GameManager : MonoBehaviour
         {
             _ennemysCount = value;
             CheckEnnemysCountLeft();
-            scoreComponent.UpdateScore(1);
+            SetInt(Getint()+2);
         }
-    }
-
-    private void Awake()
-    {
-        scoreComponent = FindObjectOfType<Score>();
     }
 
     private void CheckEnnemysCountLeft()
@@ -34,6 +31,15 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("LVL1");
         }
+    }
+
+    public void SetInt(int Value)
+    {
+        PlayerPrefs.SetInt(scoresss, Value);
+    }
+    public int Getint()
+    {
+        return PlayerPrefs.GetInt(scoresss);
     }
 
     // Start is called before the first frame update

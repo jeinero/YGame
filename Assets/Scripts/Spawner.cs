@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Spawner : MonoBehaviour
 {
+    public GameManager score;
     float x;
     float y;
     float z;
@@ -12,8 +14,8 @@ public class Spawner : MonoBehaviour
     public void SpawnRandom()
     {
 
-        x = Random.Range(-100, 100);
-        y = Random.Range(-100, 100);
+        x = UnityEngine.Random.Range(-100, 100);
+        y = UnityEngine.Random.Range(-100, 100);
         z = 0;
         pos = new Vector3(x, y, z);
         transform.position = pos;
